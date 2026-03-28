@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,25 @@ color:white;
 overflow-x:hidden;
 }
 
-/* animated gradient background */
+/* NAV */
+
+nav{
+position:absolute;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:30px 50px;
+box-sizing:border-box;
+z-index:5;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+}
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -66,39 +85,57 @@ background:linear-gradient(90deg,#6366f1,#8b5cf6);
 color:white;
 }
 
-/* floating otter mascot */
+/* MASCOT */
 
-.otter{
+.mascot{
 position:absolute;
-bottom:60px;
+bottom:40px;
 left:50%;
 transform:translateX(-50%);
-font-size:90px;
-animation:floatOtter 4s ease-in-out infinite;
+width:260px;
+animation:float 4s ease-in-out infinite;
 }
 
-@keyframes floatOtter{
+@keyframes float{
 0%{transform:translateX(-50%) translateY(0px)}
 50%{transform:translateX(-50%) translateY(-20px)}
 100%{transform:translateX(-50%) translateY(0px)}
 }
 
-/* ninja star */
+/* SHURIKENS */
 
-.star{
+.shuriken{
 position:absolute;
+width:40px;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+@keyframes fly{
+0%{transform:translateX(-200px)}
+100%{transform:translateX(120vw)}
+}
+
+.shuriken1{
 top:120px;
-left:-100px;
-font-size:40px;
-animation:starFly 6s linear infinite;
+animation:spin 1s linear infinite, fly 6s linear infinite;
 }
 
-@keyframes starFly{
-0%{left:-100px; transform:rotate(0deg)}
-100%{left:120%; transform:rotate(1080deg)}
+.shuriken2{
+top:260px;
+animation:spin 1s linear infinite, fly 8s linear infinite;
 }
 
-/* feature section */
+.shuriken3{
+top:420px;
+animation:spin 1s linear infinite, fly 10s linear infinite;
+}
+
+/* SECTIONS */
 
 .section{
 padding:120px 40px;
@@ -119,31 +156,18 @@ backdrop-filter:blur(10px);
 padding:30px;
 border-radius:14px;
 border:1px solid rgba(255,255,255,.08);
+transition:.3s;
 }
 
-.card h3{
-margin-top:0;
+.card:hover{
+transform:translateY(-6px);
+border-color:#6ee7ff;
 }
 
 footer{
 text-align:center;
 opacity:.6;
 padding:60px;
-}
-
-nav{
-position:absolute;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:30px 50px;
-box-sizing:border-box;
-}
-
-.logo{
-font-size:22px;
-font-weight:700;
 }
 
 </style>
@@ -158,44 +182,48 @@ font-weight:700;
 
 <section class="hero">
 
-<div class="star">⭐</div>
+<!-- SHURIKENS -->
+<img class="shuriken shuriken1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Shuriken.svg/512px-Shuriken.svg.png">
+<img class="shuriken shuriken2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Shuriken.svg/512px-Shuriken.svg.png">
+<img class="shuriken shuriken3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Shuriken.svg/512px-Shuriken.svg.png">
 
 <div class="hero-content">
 
 <h1>Automation at Ninja Speed</h1>
 
 <p>
-NinjaOtter builds autonomous AI agents that execute complex workflows,
-research tasks, and operations with precision and speed.
+NinjaOtter builds autonomous AI agents that execute workflows,
+research tasks, and operations with speed and precision.
 </p>
 
 <button>Request Early Access</button>
 
 </div>
 
-<div class="otter">🦦🥷</div>
+<!-- MASCOT -->
+<img class="mascot" src="otter.png">
 
 </section>
 
 <section class="section">
 
-<h2 style="text-align:center;font-size:42px;">AI That Actually Gets Work Done</h2>
+<h2 style="text-align:center;font-size:42px;">Autonomous Intelligence</h2>
 
 <div class="features">
 
 <div class="card">
-<h3>Autonomous Agents</h3>
-<p>AI systems that plan, execute, and complete real-world digital tasks independently.</p>
+<h3>Agent Automation</h3>
+<p>AI agents capable of executing multi-step workflows without supervision.</p>
 </div>
 
 <div class="card">
-<h3>Workflow Automation</h3>
-<p>Replace repetitive operations with intelligent systems that adapt and improve.</p>
+<h3>Research Systems</h3>
+<p>Rapid data synthesis and analysis across complex information sources.</p>
 </div>
 
 <div class="card">
-<h3>Research Intelligence</h3>
-<p>Agents capable of gathering, synthesizing, and analyzing large volumes of data instantly.</p>
+<h3>Operational Intelligence</h3>
+<p>Automate repetitive digital operations with adaptive AI.</p>
 </div>
 
 </div>
@@ -210,3 +238,4 @@ research tasks, and operations with precision and speed.
 
 </body>
 </html>
+```
